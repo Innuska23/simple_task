@@ -4,10 +4,11 @@ import { Button } from "./Button"
 
 type PropsType = {
     onChange: (on: boolean) => void
+    defaultOn?: boolean
 }
 
 export const UnControlledOnOff = (props: PropsType) => {
-    const [on, setOn] = useState(false);
+    const [on, setOn] = useState(props.defaultOn ? props.defaultOn : false);
 
     const handlerChangeOn = () => {
         setOn(!on);
