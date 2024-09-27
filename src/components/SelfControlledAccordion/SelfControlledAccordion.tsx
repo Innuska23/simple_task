@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useReducer } from "react";
+import { reducer, TOOGLE_COLLAPSED } from "./reducer";
 
 type AccordionPropsType = {
     title: string
@@ -6,18 +7,17 @@ type AccordionPropsType = {
 }
 
 export function SelfControlledAccordion({ title }: AccordionPropsType) {
-
-    const [collapsed, setCoollapsed] = useState(false);
+    const [state, dispatch] = useReducer(reducer, { collapsed: false });
 
     const ButtonClick = () => {
-        setCoollapsed(!collapsed)
+        dispatch({ type: TOOGLE_COLLAPSED })
     }
 
     console.log("Accordion rendering");
     return (
         <div>
             <AccordionTitle title={title} click={ButtonClick} />
-            {!collapsed && <AccordionBody />}
+            {!state.collapsed && <AccordionBody />}
         </div>
     )
 }
@@ -43,3 +43,4 @@ function AccordionBody() {
         </ul>
     )
 }
+
