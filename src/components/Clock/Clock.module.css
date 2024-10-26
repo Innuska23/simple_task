@@ -1,0 +1,17 @@
+.clockContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+  background-color: #ececec;
+  width: 200px;
+  height: 100px;
+  margin: 50px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.clockContainer span {
+  margin: 0 5px;
+}

@@ -7,6 +7,8 @@ import { UnControlledRating } from './components/UnControlledRating/UnControlled
 import { Accordion } from './components/Accordion/Accordion';
 import { OnOff } from './components/OnOff/OnOff';
 import { UnControlledOnOff } from './components/UnControlledOnOff/UnControlledOnOff';
+import { AnalogClock } from './components/Clock/AnalogClock';
+import { Clock } from './components/Clock/Clock';
 
 //function declaration
 function App() {
@@ -28,7 +30,9 @@ function App() {
       {/* <SelfControlledAccordion title='SelfControlledAccordion' /> */}
       {/* <Rating value={ratingValue} onClick={setRatingValue} /> */}
       {/* <UnControlledRating /> */}
-      <UnControlledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
+      {/* <UnControlledOnOff onChange={setSwitchOn} /> {switchOn.toString()} */}
+      <Clock />
+      <AnalogClock />
       {/* <OnOff on={switchOn} onChange={() => { setSwitchOn(!switchOn) }} /> */}
     </div>
   );
